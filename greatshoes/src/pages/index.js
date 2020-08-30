@@ -16,8 +16,8 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed(width: 150, height: 150) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -27,9 +27,9 @@ export const query = graphql`
 export default function Home({ data }) {
   return (
     <div>
-      <header class="hero">
-        <div class="container">
-          <h1 class="hero__title">Amazing Shoes at an amazing price</h1>
+      <header className="hero">
+        <div className="container">
+          <h1 className="hero__title">Amazing Shoes at an amazing price</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
             culpa?
@@ -39,71 +39,71 @@ export default function Home({ data }) {
       </header>
 
       <main>
-        <section class="featured">
-          <div class="container">
-            <h2 class="section-title">Featured products</h2>
-            <div class="split">
-              <a href="" class="featured__item">
+        <section className="featured">
+          <div className="container">
+            <h2 className="section-title">Featured products</h2>
+            <div className="split">
+              <a href="" className="featured__item">
                 <Img
-                  fixed={data.file.childImageSharp.fixed}
+                  fluid={data.file.childImageSharp.fluid}
                   alt="Shoe 1"
                   className="featured__img"
                 />
-                <p class="featured__details"></p>
+                <p className="featured__details"></p>
               </a>
-              <a href="" class="featured__item">
+              <a href="" className="featured__item">
                 <img
                   src="/src/assets/img/shoe-2.png"
                   alt="Shoe 2"
                   className="featured__img"
                 />
-                <p class="featured__details"></p>
+                <p className="featured__details"></p>
               </a>
-              <a href="" class="featured__item">
+              <a href="" className="featured__item">
                 <img
                   src="/src/assets/img/shoe-3.png"
                   alt="Shoe 3"
                   className="featured__img"
                 />
-                <p class="featured__details"></p>
+                <p className="featured__details"></p>
               </a>
             </div>
           </div>
         </section>
 
-        <section class="our-products">
-          <div class="container">
-            <h2 class="section__title">Our products</h2>
-            <article class="product">
+        <section className="our-products">
+          <div className="container">
+            <h2 className="section__title">Our products</h2>
+            <article className="product">
               <img
                 src="/src/assets/img/shoe-4.png"
                 alt="Shoe 4"
-                class="product__image"
+                className="product__image"
                 href="#"
               />
-              <h3 class="product__title"></h3>
-              <p class="product__description"></p>
-              <a href="" class="btn"></a>
+              <h3 className="product__title"></h3>
+              <p className="product__description"></p>
+              <a href="" className="btn"></a>
             </article>
-            <article class="product">
+            <article className="product">
               <img
                 src="/src/assets/img/shoe-5.png"
                 alt="Shoe 5"
-                class="product__image"
+                className="product__image"
               />
-              <h3 class="product__title"></h3>
-              <p class="product__description"></p>
-              <a href="" class="btn"></a>
+              <h3 className="product__title"></h3>
+              <p className="product__description"></p>
+              <a href="" className="btn"></a>
             </article>
-            <article class="product">
+            <article className="product">
               <img
                 src="/src/assets/img/shoe-6.png"
                 alt="Shoe 6"
-                class="product__image"
+                className="product__image"
               />
-              <h3 class="product__title"></h3>
-              <p class="product__description"></p>
-              <a href="" class="btn"></a>
+              <h3 className="product__title"></h3>
+              <p className="product__description"></p>
+              <a href="" className="btn"></a>
             </article>
           </div>
         </section>
