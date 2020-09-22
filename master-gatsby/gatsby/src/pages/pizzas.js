@@ -1,13 +1,11 @@
 import React from 'react';
 import Nav from '../components/Nav';
 
-function HomePage() {
+export default function FourOhFourPage() {
   return (
     <div>
       <Nav />
-      <p>Hey! I'm the homesgsdf page</p>
+      <p>Hey - This is the Pizza Page</p>
     </div>
   );
 }
-
-export default HomePage;

@@ -1,13 +1,11 @@
 import React from 'react';
 import Nav from '../components/Nav';
 
-function HomePage() {
+export default function SlicemastersPage() {
   return (
     <div>
       <Nav />
-      <p>Hey! I'm the homesgsdf page</p>
+      <p>Hey, this is slice masters page</p>
     </div>
   );
 }
-
-export default HomePage;
