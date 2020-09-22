@@ -52,8 +52,8 @@ export default function Home({ data }) {
                 <p className="featured__details"></p>
               </a>
               <a href="" className="featured__item">
-                <img
-                  src="/src/assets/img/shoe-2.png"
+                <Img
+                  fluid={data.file.childImageSharp.fluid}
                   alt="Shoe 2"
                   className="featured__img"
                 />
