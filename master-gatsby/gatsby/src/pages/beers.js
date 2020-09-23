@@ -1,11 +1,10 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 
 export default function FourOhFourPage() {
   return (
-    <div>
-      <Nav />
+    <Layout>
       <p>Hey - This is the Beer page</p>
-    </div>
+    </Layout>
   );
 }

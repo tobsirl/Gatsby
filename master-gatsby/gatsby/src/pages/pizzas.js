@@ -1,11 +1,10 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 
-export default function FourOhFourPage() {
+export default function PizzasPage() {
   return (
-    <div>
-      <Nav />
+    <Layout>
       <p>Hey - This is the Pizza Page</p>
-    </div>
+    </Layout>
   );
 }

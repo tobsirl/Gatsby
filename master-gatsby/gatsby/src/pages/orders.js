@@ -1,11 +1,10 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 
 export default function Orders() {
   return (
-    <div>
-      <Nav />
+    <Layout>
       <p>Hey - This is the Orders page</p>
-    </div>
+    </Layout>
   );
 }
