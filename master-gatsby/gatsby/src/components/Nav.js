@@ -4,17 +4,20 @@ import styled from 'styled-components';
 import Logo from './Logo';
 
 const NavStyles = styled.nav`
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
+  .logo {
+    transform: translateY(-25%);
+  }
   ul {
     margin: 0;
     padding: 0;
     text-align: center;
     list-style: none;
-
     display: grid;
     grid-template-columns: 1fr 1fr auto 1fr 1fr;
     grid-gap: 2rem;
     align-items: center;
+    margin-top: -6rem;
   }
   li {
     --rotate: -2deg;
@@ -33,15 +36,22 @@ const NavStyles = styled.nav`
       --rotate: 3deg;
     }
   }
-
   a {
     font-size: 3rem;
     text-decoration: none;
+    display: block;
     &:hover {
       color: var(--red);
     }
+    @media (max-width: 800px) {
+      font-size: 2rem;
+    }
+    /* &[aria-current='page'] {
+      color: var(--red);
+    } */
   }
 `;
+
 export default function Nav() {
   return (
     <NavStyles>
@@ -61,7 +71,7 @@ export default function Nav() {
           <Link to="/slicemasters">Slice Masters</Link>
         </li>
         <li>
-          <Link to="/orders">Orders</Link>
+          <Link to="/orders">Orders Ahead!</Link>
         </li>
       </ul>
     </NavStyles>
