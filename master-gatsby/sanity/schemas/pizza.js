@@ -14,5 +14,14 @@ export default {
       type: 'string',
       descripton: 'name of the pizza',
     },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 100,
+      },
+    },
   ],
 };
