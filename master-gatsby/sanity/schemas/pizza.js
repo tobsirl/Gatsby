@@ -31,5 +31,13 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'number',
+      descripton: 'Price of the pizza in cents',
+      validation: (Rule) => Rule.min(1000).max(500000),
+      // TODO: Add custom input component
+    },
   ],
 };
