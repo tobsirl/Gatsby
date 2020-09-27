@@ -23,5 +23,13 @@ export default {
         maxLength: 100,
       },
     },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 };
