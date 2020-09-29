@@ -7,7 +7,7 @@
   "author": "Wes Bos <wesbos@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint --ext .js --fix",
     "start": "sanity start"
   },
   "keywords": [
