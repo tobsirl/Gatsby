@@ -12,10 +12,10 @@ export default {
     `gatsby-plugin-styled-components`,
     {
       // this is the name of the plugin you are adding
-      resolve: `gatsby-source-sanity`,
+      resolve: 'gatsby-source-sanity',
       options: {
-        projectId: `35ani96r`,
-        data: `production`,
+        projectId: '35ani96r',
+        dataset: 'production',
         watchMode: true,
         token: process.env.SANITY_TOKEN,
       },
