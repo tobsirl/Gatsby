@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 
 export default function PizzasPage() {
@@ -7,3 +8,27 @@ export default function PizzasPage() {
     </>
   );
 }
+
+// Page Queries
+export const query = graphql`
+  query {
+    allSanityPizza {
+      nodes {
+        id
+        name
+        price
+        slug {
+          current
+        }
+        toppings {
+          name
+        }
+      }
+    }
+    allSanityPerson {
+      nodes {
+        name
+      }
+    }
+  }
+`;

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-pizzas-js","path":"/pizzas/","result":{"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-pizzas-js","path":"/pizzas/","result":{"data":{"allSanityPizza":{"nodes":[{"id":"-e2f4aa29-4ca0-5ee8-a76c-526c47b2e096","name":"Veggie Delight","price":2256,"slug":{"current":"veggie-delight"},"toppings":[{"name":"Onions"},{"name":"Mushrooms"}]}]},"allSanityPerson":{"nodes":[{"name":"Slick"}]}},"pageContext":{}},"staticQueryHashes":[]}
