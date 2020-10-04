@@ -11,23 +11,25 @@ export default function PizzasPage() {
 
 // Page Queries
 export const query = graphql`
-  query {
+  query PizzaQuery {
     allSanityPizza {
       nodes {
         id
         name
-        price
         slug {
           current
         }
         toppings {
+          id
           name
         }
-      }
-    }
-    allSanityPerson {
-      nodes {
-        name
+        image {
+          asset {
+            fluid(maxWidth: 400) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
       }
     }
   }
