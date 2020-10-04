@@ -7,8 +7,7 @@ export default function PizzasPage({ data }) {
   const pizzas = data.pizzas.nodes;
   return (
     <>
-      <p>Hey - There are {pizzas.length} pizzas</p>
-      <PizzaList />
+      <PizzaList pizzas={pizzas} />
     </>
   );
 }
