@@ -3,7 +3,27 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ToppingStyles = styled.div`
-`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0 1rem;
+    align-items: center;
+    padding: 5px;
+    background: var(--grey);
+    border-radius: 2px;
+    .count {
+      background: white;
+      padding: 2px 5px;
+    }
+    .active {
+      background: var(--yellow);
+    }
+  }
+`;
 
 function countPizzasInToppings(pizzas) {
   // return the pizzas
@@ -68,13 +88,13 @@ export default function ToppingsFilter() {
 
   // Link it up ... .... ....
   return (
-    <div>
+    <ToppingStyles>
       {toppingsWithCounts.map((topping) => (
         <Link key={topping.id} to={`/topping/${topping.name}`}>
           <span className="name">{topping.name}</span>
           <span className="count">{topping.count}</span>
         </Link>
       ))}
-    </div>
+    </ToppingStyles>
   );
 }
