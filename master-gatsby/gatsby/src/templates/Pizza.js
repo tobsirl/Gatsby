@@ -1,3 +1,5 @@
-export default SinglePizzaPage() {
-  return <p>Single Pizza</p>
+import React from 'react';
+
+export default function SinglePizzaPage() {
+  return <p>Single Pizza</p>;
 }

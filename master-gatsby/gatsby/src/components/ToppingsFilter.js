@@ -28,7 +28,7 @@ const ToppingStyles = styled.div`
 function countPizzasInToppings(pizzas) {
   // return the pizzas
   // return pizzas
-  console.log(pizzas);
+  // console.log(pizzas);
   const counts = pizzas
     .map((pizza) => pizza.toppings)
     .flat()
