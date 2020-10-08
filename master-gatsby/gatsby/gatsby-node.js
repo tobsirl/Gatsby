@@ -31,7 +31,7 @@ async function turnPizzasIntoPages({ graphql, actions }) {
 
 async function turnToppingsIntoPages({ graphql, actions }) {
   // 1. Get the template
-  const toppingsTemplate = path.resolve('./src/pages/pizzas.js');
+  const toppingTemplate = path.resolve('./src/pages/pizzas.js');
   // 2. Query all the toppings
   const { data } = await graphql(`
     query {
@@ -46,7 +46,15 @@ async function turnToppingsIntoPages({ graphql, actions }) {
   console.log(data);
   // 3. createPage for that toppings
   data.toppings.nodes.forEach((topping) => {
-    console.log(`Creating page for toppings - ${topping.name}`);
+    actions.createPage({
+      path: `topping/${topping.name}`,
+      component: toppingTemplate,
+      context: {
+        topping: topping.name,
+        // TODO Regex for topping
+        toppingRegex: `/${topping.name}/`,
+      },
+    });
   });
   // 4. Pass topping data to pizza.js
 }

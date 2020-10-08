@@ -11,13 +11,12 @@ const PizzaGrid = styled.div`
 
 export default function SinglePizzaPage({ data }) {
   const { pizza } = data;
-  console.log(pizza);
   return (
     <PizzaGrid>
       <Img fluid={pizza.image.asset.fluid} />
       <h2 className="mark">{pizza.name}</h2>
       <ul>
-        {pizza.toppings.map(({ name, id, vegetarian }) => (
+        {pizza.toppings.map(({ name, id }) => (
           <li key={id}>{name}</li>
         ))}
       </ul>
