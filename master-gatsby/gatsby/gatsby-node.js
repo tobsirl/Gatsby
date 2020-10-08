@@ -29,11 +29,25 @@ async function turnPizzasIntoPages({ graphql, actions }) {
   });
 }
 
-async function turnToppingsIntoPages() {
+async function turnToppingsIntoPages({ graphql, actions }) {
   // 1. Get the template
-  const toppingsTemplate = path.resolve('./src/templates/Pizza.js');
+  const toppingsTemplate = path.resolve('./src/pages/pizzas.js');
   // 2. Query all the toppings
+  const { data } = await graphql(`
+    query {
+      toppings: allSanityTopping {
+        nodes {
+          name
+          id
+        }
+      }
+    }
+  `);
+  console.log(data);
   // 3. createPage for that toppings
+  data.toppings.nodes.forEach((topping) => {
+    console.log(`Creating page for toppings - ${topping.name}`);
+  });
   // 4. Pass topping data to pizza.js
 }
 
