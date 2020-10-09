@@ -59,6 +59,19 @@ async function turnToppingsIntoPages({ graphql, actions }) {
   // 4. Pass topping data to pizza.js
 }
 
+async function fetchBeersAndTurnIntoNodes({
+  actions,
+  createNodeId,
+  createContentDigest,
+}) {
+  console.log(`Turn beers into nodes`);
+}
+
+export async function sourceNodes() {
+  // fetch a list of beers and source them into our gatsby API!
+  await Promise.all([fetchBeersAndTurnIntoNodes()]);
+}
+
 export async function createPages(params) {
   // Create pages dynamically
   // Wait for all promises to be resolved before finishing
