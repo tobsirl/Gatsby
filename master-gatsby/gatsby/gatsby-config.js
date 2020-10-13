@@ -7,8 +7,10 @@ export default {
     title: `Slick's Slices`,
     siteUrl: `https://www.gatsbyjs.com`,
     description: `The best place place in the world`,
+    twitter: '@slickSlices',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
     {
       // this is the name of the plugin you are adding
