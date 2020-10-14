@@ -8,6 +8,10 @@ export default function Orders() {
       <form>
         <fieldset>
           <legend>Your Info</legend>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" />
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" />
         </fieldset>
         <fieldset>
           <legend>Menu</legend>
