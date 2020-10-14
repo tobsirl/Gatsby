@@ -3,7 +3,8 @@ import React from 'react';
 import Img from 'gatsby-image';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
-import calculatePizzaPrize from '../utils/calculatePizzaPrize';
+import calculatePizzaPrice from '../utils/calculatePizzaPrice';
+import formatMoney from '../utils/formatMoney';
 
 export default function Orders({ data }) {
   const pizzas = data.pizzas.nodes;
@@ -50,7 +51,10 @@ export default function Orders({ data }) {
                 <h2>{pizza.name}</h2>
                 <div>
                   {['S', 'M', 'L'].map((size) => (
-                    <button type="button">{size}</button>
+                    <button type="button">
+                      {size}{' '}
+                      {formatMoney(calculatePizzaPrice(pizza.price, size))}
+                    </button>
                   ))}
                 </div>
               </div>
