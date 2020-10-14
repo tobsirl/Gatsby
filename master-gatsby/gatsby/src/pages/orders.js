@@ -1,7 +1,9 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import Img from 'gatsby-image';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
+import calculatePizzaPrize from '../utils/calculatePizzaPrize';
 
 export default function Orders({ data }) {
   const pizzas = data.pizzas.nodes;
@@ -21,6 +23,7 @@ export default function Orders({ data }) {
           <input
             type="text"
             name="name"
+            id="name"
             value={values.name}
             onChange={updateValue}
           />
@@ -28,6 +31,7 @@ export default function Orders({ data }) {
           <input
             type="email"
             name="email"
+            id="email"
             value={values.email}
             onChange={updateValue}
           />
@@ -37,7 +41,18 @@ export default function Orders({ data }) {
           {pizzas.map((pizza) => (
             <div key={pizza.id}>
               <div>
+                <Img
+                  width="50"
+                  height="50"
+                  fluid={pizza.image.asset.fluid}
+                  alt={pizza.name}
+                />
                 <h2>{pizza.name}</h2>
+                <div>
+                  {['S', 'M', 'L'].map((size) => (
+                    <button type="button">{size}</button>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
