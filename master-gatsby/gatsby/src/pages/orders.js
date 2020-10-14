@@ -1,8 +1,11 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 
-export default function Orders() {
+export default function Orders({ data }) {
+  const pizzas = data.pizzas.nodes;
+  console.log(pizzas);
   const { values, updateValue } = useForm({
     name: '',
     email: '',
@@ -31,6 +34,13 @@ export default function Orders() {
         </fieldset>
         <fieldset>
           <legend>Menu</legend>
+          {pizzas.map((pizza) => (
+            <div key={pizza.id}>
+              <div>
+                <h2>{pizza.name}</h2>
+              </div>
+            </div>
+          ))}
         </fieldset>
         <fieldset>
           <legend>Order</legend>
@@ -39,3 +49,25 @@ export default function Orders() {
     </>
   );
 }
+
+export const query = graphql`
+  query {
+    pizzas: allSanityPizza {
+      nodes {
+        name
+        id
+        slug {
+          current
+        }
+        price
+        image {
+          asset {
+            fluid(maxWidth: 100) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
