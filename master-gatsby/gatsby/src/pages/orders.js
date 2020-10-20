@@ -32,6 +32,10 @@ export default function Orders({ data }) {
     values,
   });
 
+  if (message) {
+    return <p>{message}</p>;
+  }
+
   return (
     <>
       <SEO title="Order a Pizza!" />
@@ -94,6 +98,7 @@ export default function Orders({ data }) {
           <h3>
             Your Total is {formatMoney(calculateOrderTotal(order, pizzas))}
           </h3>
+          <div>{error ? <p>{error}</p> : ''}</div>
           <button type="submit" disabled={loading}>
             {loading ? 'Placing Order...' : 'Order Ahead'}
           </button>
