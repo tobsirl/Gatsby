@@ -9,10 +9,22 @@ export default {
   icon,
   fields: [
     {
+      name: 'name',
+      title: 'Store Name',
+      type: 'string',
+      descripton: 'name of the store',
+    },
+    {
       name: 'slicemasters',
       title: 'Slicemasters Currently Slicing',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'person' }] }],
+    },
+    {
+      name: 'hotslices',
+      title: 'Hot Slices available in the case',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'pizza' }] }],
     },
   ],
 };
