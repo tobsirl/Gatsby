@@ -6,7 +6,7 @@ import LoadingGrid from '../components/LoadingGrid';
 function CurrentlySlicing({ slicemasters }) {
   return (
     <>
-      <LoadingGrid />
+      <LoadingGrid count={4} />
     </>
   );
 }
@@ -14,7 +14,7 @@ function CurrentlySlicing({ slicemasters }) {
 function HotSlices({ hotSlices }) {
   return (
     <>
-      <LoadingGrid />
+      <LoadingGrid count={4} />
     </>
   );
 }
