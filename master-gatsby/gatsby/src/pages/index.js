@@ -4,6 +4,7 @@ import { HomePageGrid } from '../styles/Grids';
 import LoadingGrid from '../components/LoadingGrid';
 
 function CurrentlySlicing({ slicemasters }) {
+  console.log(slicemasters);
   return (
     <>
       {!slicemasters && <LoadingGrid count={4} />}
@@ -15,6 +16,7 @@ function CurrentlySlicing({ slicemasters }) {
 }
 
 function HotSlices({ hotSlices }) {
+  console.log(hotSlices);
   return (
     <>
       {!hotSlices && <LoadingGrid count={4} />}
