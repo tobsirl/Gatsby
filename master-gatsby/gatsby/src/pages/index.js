@@ -7,6 +7,9 @@ import ItemGrid from '../components/ItemGrid';
 function CurrentlySlicing({ slicemasters }) {
   return (
     <>
+      <h2 className="center">
+        <span className="mark tilt">Slicemaster On</span>
+      </h2>
       {!slicemasters && <LoadingGrid count={4} />}
       {slicemasters && !slicemasters?.length && (
         <p>No one is working right now!</p>
@@ -19,6 +22,9 @@ function CurrentlySlicing({ slicemasters }) {
 function HotSlices({ hotSlices }) {
   return (
     <>
+      <h2 className="center">
+        <span className="mark tilt">Hot Slices</span>
+      </h2>
       {!hotSlices && <LoadingGrid count={4} />}
       {hotSlices && !hotSlices?.length && <p>No one is working right now!</p>}
       {hotSlices?.length && <ItemGrid items={hotSlices} />}
