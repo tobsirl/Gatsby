@@ -1,16 +1,15 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-export const query = graphl`
+export const query = graphql`
   query Users {
     allRandomUser {
       edges {
         node {
-          id 
+          id
           name {
             first
             last
@@ -24,15 +23,21 @@ export const query = graphl`
   }
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
+    <h1>Random People</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    {/* <p>{JSON.stringify(data, null, 2)}</p> */}
+    <ul>
+      {data.allRandomUser.edges.map(({ node }) => (
+        <div key={node.id}>
+          <li >{node.name.first}</li>
+          <img src={node.picture.thumbnail} alt={node.name.first} />
+        </div>
+      ))}
+    </ul>
   </Layout>
 )
 
