@@ -1,3 +1,5 @@
+import { Link } from "gatsby"
+import { node } from "prop-types"
 import React from "react"
 // import { graphql } from "gatsby"
 
@@ -30,14 +32,14 @@ const IndexPage = ({ data }) => (
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     {/* <p>{JSON.stringify(data, null, 2)}</p> */}
-    <ul>
+    <Link to={`users/${node.id}`} key={node.id}>
       {data.allRandomUser.edges.map(({ node }) => (
-        <div key={node.id}>
-          <li >{node.name.first}</li>
+        <li>
           <img src={node.picture.thumbnail} alt={node.name.first} />
-        </div>
+          {node.name.first} {node.name.last}
+        </li>
       ))}
-    </ul>
+    </Link>
   </Layout>
 )
 
