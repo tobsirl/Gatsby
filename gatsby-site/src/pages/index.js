@@ -32,14 +32,16 @@ const IndexPage = ({ data }) => (
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     {/* <p>{JSON.stringify(data, null, 2)}</p> */}
-    <Link to={`users/${node.id}`} key={node.id}>
+    <ul>
       {data.allRandomUser.edges.map(({ node }) => (
-        <li>
-          <img src={node.picture.thumbnail} alt={node.name.first} />
-          {node.name.first} {node.name.last}
-        </li>
+        <Link to={`users/${node.id}`} key={node.id}>
+          <li>
+            <img src={node.picture.thumbnail} alt={node.name.first} />
+            {node.name.first} {node.name.last}
+          </li>
+        </Link>
       ))}
-    </Link>
+    </ul>
   </Layout>
 )
 
