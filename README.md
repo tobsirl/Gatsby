@@ -46,3 +46,4 @@ const fetchStates = async ({ actions, createContentDigest }) => {
   })
 }
 ```
+You can use `createNodeId()` to create an id if the api doesn't have one
