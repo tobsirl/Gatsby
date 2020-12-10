@@ -31,6 +31,7 @@ const IndexPage = ({ data }) => (
     <h1>Random People</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
+    <Link to={`/page-2`}>States</Link>
     {/* <p>{JSON.stringify(data, null, 2)}</p> */}
     <ul>
       {data.allRandomUser.edges.map(({ node }) => (
