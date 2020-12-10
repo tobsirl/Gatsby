@@ -8,7 +8,7 @@
 const path = require("path")
 require("isomorphic-fetch")
 
-const fetchStates = async ({ actions, createNodeId, createContentDigest }) => {
+const fetchStates = async ({ actions, createContentDigest }) => {
   // 1. Fetch list of states
   const res = await fetch(`https://sampleapis.com/the-states/api/the-states`)
 
@@ -28,10 +28,10 @@ const fetchStates = async ({ actions, createNodeId, createContentDigest }) => {
       },
     }
 
-    // 3. Create a node for each state
+    // 3. create a node for that state
     actions.createNode({
       ...state,
-      nodeMeta,
+      ...nodeMeta,
     })
   })
 }
