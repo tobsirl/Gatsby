@@ -6,12 +6,34 @@
 
 // You can delete this file if you're not using it
 const path = require("path")
+require("isomorphic-fetch")
 
 const fetchStates = async ({ actions, createNodeId, createContentDigest }) => {
-  console.log(`Fetch States into Nodes! ❤`)
   // 1. Fetch list of states
+  const res = await fetch(`https://sampleapis.com/the-states/api/the-states`)
+
+  const states = await res.json()
+
   // 2. Loop over each one
-  // 3. Create a node for each state
+  states.forEach(state => {
+    // create a node for each state
+    const nodeMeta = {
+      id: state.id,
+      parent: null,
+      children: [],
+      internal: {
+        type: "State",
+        mediaType: "application/json",
+        contentDigest: createContentDigest(state),
+      },
+    }
+
+    // 3. Create a node for each state
+    actions.createNode({
+      ...state,
+      nodeMeta,
+    })
+  })
 }
 
 exports.sourceNodes = async params => {
